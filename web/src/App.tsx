@@ -3,8 +3,13 @@ import './styles/main.css'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
+interface Post {
+  title: string
+  price: number
+}
+
 function App() {
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState<Post[]>([])
 
 
   useEffect(() => {
@@ -24,7 +29,7 @@ function App() {
           console.log(post)
 
           return (
-            <Post />
+            <Post title={post.title} price={post.price} />
           )
         })}
       </div>
