@@ -16,12 +16,4 @@ app.get('/posts', async (request, response) => {
   )
 })
 
-app.get('/states', async (request, response) => {
-  const states = await prisma.state.findMany()
-
-  return response.send(
-    states
-  )
-})
-
 app.listen(3333)

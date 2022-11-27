@@ -5,7 +5,14 @@ import { useEffect, useState } from 'react';
 
 interface Post {
   title: string
+  description: string
+  published: Date
   price: number
+  state: string
+  model: string  
+  manufacturer: string
+  year: number
+  km: number
 }
 
 function App() {
@@ -26,10 +33,18 @@ function App() {
       <div className='w-full grid gap-5 grid-cols-4 mt-20'>
         
         {posts.map(post => {
-          console.log(post)
-
           return (
-            <Post title={post.title} price={post.price} />
+            <Post 
+              title={post.title}
+              description={post.description}
+              published={post.published}
+              price={post.price}
+              state={post.state}
+              model={post.model}
+              manufacturer={post.manufacturer}
+              year={post.year}
+              km={post.km}
+            />
           )
         })}
       </div>
