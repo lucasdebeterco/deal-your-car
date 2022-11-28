@@ -1,9 +1,13 @@
-import { Post } from './components/post'
+import { Post } from './components/Post'
 import './styles/main.css'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import {MagnifyingGlassPlus} from 'phosphor-react';
+import * as Dialog from '@radix-ui/react-dialog';
+import { CreatePostModal } from './components/CreatePostModal';
 
 interface Post {
+  id: number;
   title: string
   description: string
   published: Date
@@ -29,12 +33,22 @@ function App() {
   return (
     <div className='container mx-auto flex flex-col items-center my-20'>
       <h1 className="flex align-middle text-4xl text-red-700 font-bold">Deal Your Car</h1>
+      
+      <Dialog.Root>
+        <Dialog.Trigger className='mt-6 py-3 px-4 bg-red-700 hover:bg-red-800 text-white rounded flex items-center gap-2'>
+          <MagnifyingGlassPlus size={24} />
+          Publicar anúncio
+        </Dialog.Trigger>
+
+        <CreatePostModal />
+      </Dialog.Root>
+
 
       <div className='w-full grid gap-5 grid-cols-4 mt-20'>
-        
         {posts.map(post => {
           return (
             <Post 
+              key={post.id}
               title={post.title}
               description={post.description}
               published={post.published}

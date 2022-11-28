@@ -12,15 +12,15 @@ interface PostProps {
 
 export function Post({title, description, published, price, state, model, manufacturer, year, km}: PostProps) {
   return (
-    <div className='p-4 border-solid border-[1px] rounded-lg border-gray-300 text-zinc-700'>
-        <>
-        <div className="text-2xl font-semibold">{title}</div>
-
-        <div>
-          {description}
+    <div className='p-4 border-solid border-[1px] rounded-lg border-gray-300 text-zinc-700 hover:border-red-800'>
+        <div className="pb-2 mb-2 border-b-[1px]">
+          <div className="text-2xl font-semibold">
+            {title}
+          </div>
+          <div>
+            {description}
+          </div>
         </div>
-
-        <hr></hr>
 
         <div>
           R$ {price}
@@ -45,11 +45,12 @@ export function Post({title, description, published, price, state, model, manufa
         <div>
           {km}Km
         </div>
-        
-        <hr></hr>
 
-        Publicado em: {published}
-        </>
+        <div className="pt-2 mt-2 border-t-[1px]">
+          <>
+            Publicado em: {published}
+          </>
+        </div>
     </div>
   )
 }

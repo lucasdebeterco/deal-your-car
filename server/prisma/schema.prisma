@@ -14,7 +14,7 @@ model Post {
   id           Int      @id @default(autoincrement())
   title        String
   description  String
-  published    DateTime
+  published    DateTime @default(now())
   price        Float
   state        String
   model        String  
