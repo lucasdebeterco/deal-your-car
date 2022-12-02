@@ -35,7 +35,7 @@ function App() {
       <h1 className="flex align-middle text-4xl text-red-700 font-bold">Deal Your Car</h1>
       
       <Dialog.Root>
-        <Dialog.Trigger className='mt-6 py-3 px-4 bg-red-700 hover:bg-red-800 text-white rounded flex items-center gap-2'>
+        <Dialog.Trigger className='mt-6 py-3 px-4 text-lg bg-red-700 hover:bg-red-800 text-white rounded flex items-center gap-2'>
           <MagnifyingGlassPlus size={24} />
           Publicar anúncio
         </Dialog.Trigger>
